@@ -3,6 +3,7 @@ use torm::Torm;
 mod event;
 mod state;
 mod torm;
+mod ui;
 
 /// Type alias for Result.
 type TormResult<T> = Result<T, Box<dyn std::error::Error + Send + Sync>>;

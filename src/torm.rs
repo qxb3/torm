@@ -3,9 +3,7 @@ use std::panic;
 use ratatui::{Terminal, prelude::CrosstermBackend};
 
 use crate::{
-    TormResult,
-    event::{EventHandler, TormEvent},
-    state::State,
+    event::{EventHandler, TormEvent}, state::State, ui, TormResult
 };
 
 /// Torm Code Editor.
@@ -62,7 +60,7 @@ impl Torm {
     /// Handle tick event.
     async fn tick(&mut self) -> TormResult<()> {
         // Draws the ui.
-        // ui::draw(&mut self.terminal, &self.state).await?;
+        ui::draw(&mut self.terminal).await?;
 
         Ok(())
     }
